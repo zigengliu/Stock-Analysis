@@ -9,6 +9,7 @@ function clickSubmit() {
 	stock = $("#stockSymbol").val();
 	date_start = $("#date_start").val();
 	date_end = $("#date_end").val();
+	data_freq = $("#data_freq").val();
 	var stockArray = new Array();
 	var url = 'https://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.historicaldata where symbol ="'+stock+'" and startDate="'+date_start+'" and endDate="'+date_end+'"&format=json&env=store://datatables.org/alltableswithkeys';
 	console.log(url);
