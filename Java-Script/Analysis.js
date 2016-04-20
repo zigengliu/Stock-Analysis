@@ -13,6 +13,30 @@ function clickSubmit() {
 	var stockArray = new Array();
 	var url = 'https://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.historicaldata where symbol ="'+stock+'" and startDate="'+date_start+'" and endDate="'+date_end+'"&format=json&env=store://datatables.org/alltableswithkeys';
 	console.log(url);
+	//--------------------------------------------------------------------------
+	//edit load csv url to csv object, convert csv to json.
+	// var csv_url = 'http://real-chart.finance.yahoo.com/table.csv?s='+stock+'&a=11&b=12&c=1980&d=03&e=17&f=2016&g='+data_freq+'&ignore=.csv'
+	// var json_object = function(csv){
+	// 	var lines=csv.split("\n");
+ // 		var result = [];
+ // 		var headers=lines[0].split(",");
+ // 		for(var i=1;i<lines.length;i++){
+ // 			var obj = {};
+	//   		var currentline=lines[i].split(",");
+
+	//   		for(var j=0;j<headers.length;j++){
+	// 	  	obj[headers[j]] = currentline[j];
+	// 		}
+
+	// 		result.push(obj);
+
+ // 		}
+ // 		//return result; //JavaScript object
+ // 		return JSON.stringify(result); //JSON
+	// }
+	// console.log(csv_url);
+	//--------------------------------------------------------------------------
+	
 	$.ajax({
     	url: url,
     	dataType: 'json',
